@@ -1,10 +1,33 @@
 span {
   color: red;
 }
-:login {
-  background-image: linear-gradient(red, yellow);
+.info {
+  background-color: #ff9f1c;
 }
 
+.info2 {
+  background-color: #ffbf69;
+}
 p {
   font-weight: bold;
+}
+
+.bcontainer {
+  display: flex;
+
+  justify-content: center;
+}
+
+button {
+  margin-left: 2em;
+  border-radius: 30px;
+  border-color: orange;
+}
+
+.binfo {
+  justify-content: right;
+}
+
+#myModal {
+  margin-top: 20em;
 }

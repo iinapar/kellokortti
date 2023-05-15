@@ -1,54 +1,100 @@
 <!--Sisääkirjautumisen formit. Validoinnin vaatimuksena, että tunnus ja salasana ei saa olla tyhjiä.
  -->
-<div class="container mt-5">
-  <p>Kirjaudu sisään</p>
-  <form
-    #f="ngForm"
-    (ngSubmit)="onSubmit(f.value, f.valid!)"
-    action="/action_page.php"
-    novalidate
-  >
-    <div class="mb-3 mt-3">
-      <label for="tunnus" class="form-label">Tunnus:</label>
-      <input
-        #tunnus="ngModel"
-        type="text"
-        class="form-control"
-        id="tunnus"
-        name="tunnus"
-        ngModel
-        required
-        email
-      /><span [hidden]="!f.form.hasError('email', 'tunnus') || tunnus.pristine"
-        >Sähköposti on tunnus</span
-      >
-    </div>
-    <div class="mb-3 mt-3">
-      <label for="salasana" class="form-label">Salasana:</label>
-      <input
-        #salasana="ngModel"
-        type="password"
-        class="form-control"
-        id="salasana"
-        name="salasana"
-        ngModel
-        required
-      />
+<div class="sivu">
+  <div class="container mt-5">
+    <p>Kirjaudu sisään</p>
+    <form
+      #f="ngForm"
+      (ngSubmit)="onSubmit(f.value, f.valid!)"
+      action="/action_page.php"
+      novalidate
+    >
+      <div class="mb-3 mt-3">
+        <label for="tunnus" class="form-label">Tunnus:</label>
+        <input
+          #tunnus="ngModel"
+          type="text"
+          class="form-control"
+          id="tunnus"
+          name="tunnus"
+          ngModel
+          required
+          email
+        /><span
+          [hidden]="!f.form.hasError('email', 'tunnus') || tunnus.pristine"
+          >Sähköposti on tunnus</span
+        >
+      </div>
+      <div class="mb-3 mt-3">
+        <label for="salasana" class="form-label">Salasana:</label>
+        <input
+          #salasana="ngModel"
+          type="password"
+          class="form-control"
+          id="salasana"
+          name="salasana"
+          ngModel
+          required
+        />
 
-      <span
-        [hidden]="!f.form.hasError('required', 'salasana') || salasana.pristine"
-        >Anna salasana</span
-      >
+        <span
+          [hidden]="
+            !f.form.hasError('required', 'salasana') || salasana.pristine
+          "
+          >Anna salasana</span
+        >
+      </div>
+      <div class="bcontainer">
+        <button type="submit" class="btn btn-primary btn-lg info">
+          Lähetä
+        </button>
+        <div class="binfo">
+          <button
+            type="button"
+            class="btn btn-primary btn-lg info2"
+            data-bs-toggle="modal"
+            data-bs-target="#myModal"
+          >
+            Info
+          </button>
+        </div>
+      </div>
+    </form>
+    <div *ngIf="this.error" class="alert alert-danger mt-3 alert-dismissible">
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="alert"
+        (click)="changeError()"
+      ></button>
+      <strong>Tunnus tai salasana väärin.</strong>
     </div>
-    <button type="submit" class="btn btn-primary">Lähetä</button>
-  </form>
-  <div *ngIf="this.error" class="alert alert-danger mt-3 alert-dismissible">
-    <button
-      type="button"
-      class="btn-close"
-      data-bs-dismiss="alert"
-      (click)="changeError()"
-    ></button>
-    <strong>Tunnus tai salasana väärin.</strong>
+  </div>
+</div>
+
+<div class="modal fade" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Kiitos kun pelasit</h4>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+        ></button>
+      </div>
+
+      <!-- Modal body -->
+
+      <div class="modal-body">Paljon onnea!!</div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
+          Sulje
+        </button>
+      </div>
+    </div>
   </div>
 </div>
