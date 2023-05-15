@@ -11,6 +11,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { UserviewComponent } from './userview/userview.component';
 import { CdTimerModule } from 'angular-cd-timer';
 import { TimerComponent } from './timer/timer.component';
+import { OutputComponent } from './output/output.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,6 +19,7 @@ import { TimerComponent } from './timer/timer.component';
     NavbarComponent,
     UserviewComponent,
     TimerComponent,
+    OutputComponent,
   ],
   imports: [
     BrowserModule,
