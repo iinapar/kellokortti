@@ -1,0 +1,13 @@
+<div class="container">
+  <p><button (click)="start()">Käynnistä</button></p>
+  <p><button (click)="stop()">Tuloste</button></p>
+
+  <p><button (click)="showSaldo()">Päivän saldo</button></p>
+  <div *ngIf="saldo">
+    <app-timer></app-timer>
+  </div>
+</div>
+<div class="container">
+  <p><button>Sairausp.olo</button> <button (click)="(stop)">Luvallinen p.olo</button></p>
+  <p><button>ylityö</button> <button (click)="(stop)">Liukuma</button></p>
+</div>
