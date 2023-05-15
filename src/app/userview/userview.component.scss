@@ -1,4 +1,39 @@
 .container {
-  background-color: #CBF3F0;
+  background-color: #cbf3f0;
   margin: 1rem;
+}
+.container-laskuri {
+  display: flexbox;
+  justify-content: center;
+  background-color: #cbf3f0;
+  border-radius: 30px;
+  //tähän laatikon shadow
+  //laatikko yht
+}
+.container-muut {
+  display: grid;
+  grid-template-columns: 85px 85px;
+  grid-template-rows: 206px 206px;
+  column-gap: 10px;
+  row-gap: 10px;
+  background-color: #cbf3f0;
+  border-radius: 30px;
+  //tähän laatikon shadow
+  //laatikko yht 423x180
+  //onnee gridin värkkäilyyn
+}
+.button-big {
+  //tuloste-nappi
+}
+.button-small-blue {
+  background-color: #2ec4b6;
+}
+.button-small-white {
+  background-color: #ffffff;
+}
+.button-small-orange {
+  background-color: #ff9f1c;
+}
+.button-big-orange {
+  background-color: #ff9f1c;
 }
