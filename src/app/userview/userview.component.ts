@@ -7,7 +7,11 @@ import { CdTimerComponent, TimeInterface } from 'angular-cd-timer';
   styleUrls: ['./userview.component.scss'],
 })
 export class UserviewComponent {
-  showTimer = false;
+  showTimer: boolean = false;
+  tyo: boolean = false;
+  tauko: boolean = true;
+  tyovalmis: boolean = false;
+
   @ViewChild(CdTimerComponent, { static: false }) basicTimer!: CdTimerComponent;
 
   toggleTimer() {
@@ -29,5 +33,12 @@ export class UserviewComponent {
         this.basicTimer.stop();
         break;
     }
+  }
+  sisaan() {
+    this.tyo = true;
+  }
+  aloitatauko() {
+    this.tauko = true;
+    this.tyo = false;
   }
 }
