@@ -1,4 +1,11 @@
 <div class="container">
+  <div id="containerlogo">
+    <img
+      id="isologo"
+      src="../../assets/icons/kellokortti-logo2.png"
+      alt="My Image"
+    />
+  </div>
   <div class="container-laskuri">
     <button
       *ngIf="!tyo"
@@ -24,14 +31,14 @@
       </button></span
     >
     <div [style.display]="showTimer ? 'block' : 'none'">
-      <cd-timer [autoStart]="false" #basicTimer></cd-timer>
+      <cd-timer class="kello" [autoStart]="false" #basicTimer></cd-timer>
     </div>
   </div>
 </div>
 
 <div class="container-muut">
-  <button class="button-small-blue">Sairausp.olo</button>
-  <button class="button-small-white">Luvallinen p.olo</button>
-  <button class="button-small-orange">Ylityö</button>
-  <button class="button-small-white">Liukuma</button>
+  <button id="button-saikku">Sairausp.olo</button>
+  <button id="button-lupa">Luvallinen p.olo</button>
+  <button id="button-ylityo">Ylityö</button>
+  <button id="button-liukuma">Liukuma</button>
 </div>

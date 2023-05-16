@@ -1,3 +1,27 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+body,
+h1,
+h2,
+h3,
+h4,
+button {
+  font-family: 'Montserrat', sans-serif;
+}
+
+#isologo {
+  filter: drop-shadow(1px 2px 2px #00000029);
+  width: 25%;
+}
+
+#containerlogo {
+  margin-top: 6em;
+  margin-bottom: 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .container-laskuri {
   display: flex;
   flex-direction: column;
@@ -5,21 +29,24 @@
   align-items: center;
   background-color: #cbf3f0;
   border-radius: 30px;
-  box-shadow: 0 5px 5px 2px #868686;
+  filter: drop-shadow(3px 3px 4px #00000079);
   align-content: center;
   margin: auto;
   padding: 1rem 2rem;
-  width: 90%;
+  width: 95%;
+  margin-bottom: 3em;
   //laatikko yht 387x288
 }
 .container-muut {
-  display: grid;
-  grid-template-columns: 85px 85px;
-  grid-template-rows: 206px 206px;
-  column-gap: 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  column-gap: 0.7em;
+  row-gap: 0.5em;
   background-color: #cbf3f0;
   border-radius: 30px;
-  box-shadow: 0 5px 5px 2px #868686;
+  filter: drop-shadow(3px 3px 4px #00000079);
   align-items: center;
   justify-items: center;
   width: 90%;
@@ -31,20 +58,78 @@
   //tuloste-nappi
   border-radius: 35px;
   font-size: 1.5rem;
-  box-shadow: 0 5px 5px 2px #868686;
+  filter: drop-shadow(3px 3px 4px #00000079);
   font-weight: bold;
   color: #ffffff;
   padding: 10px 40px;
 }
 .button-small-blue {
+  scale: 80%;
   background-color: #2ec4b6;
   border-radius: 30px;
-  font-size: 1rem;
+  font-size: 0.9rem;
+  filter: drop-shadow(1px 4px 2px #00000065);
+  font-weight: 500;
+  color: #ffffff;
+  padding: 0.65em 1.5em;
+  margin-top: 3em;
+  border: 0cm;
+}
+
+#button-saikku {
+  scale: 100%;
+  background-color: #2ec4b6;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  filter: drop-shadow(1px 4px 2px #00000065);
   font-weight: bold;
   color: #ffffff;
-  box-shadow: 0 5px 5px 2px #868686;
-  padding: 15px 1rem;
+  padding: 0.65em 1.5em;
+  margin-top: 1em;
+  border: 0cm;
 }
+
+#button-lupa {
+  scale: 100%;
+  background-color: #ffffff;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  filter: drop-shadow(1px 4px 2px #00000065);
+  font-weight: bold;
+  color: #2ec4b6;
+  padding: 0.65em 1em;
+  margin-top: 1em;
+  border: 0cm;
+}
+
+#button-ylityo {
+  scale: 100%;
+  background-color: #ffffff;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  filter: drop-shadow(1px 4px 2px #00000065);
+  font-weight: bold;
+  color: #ff9f1c;
+  padding: 0.65em 3.1em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  border: 0cm;
+}
+
+#button-liukuma {
+  scale: 100%;
+  background-color: #ff9f1c;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  filter: drop-shadow(1px 4px 2px #00000065);
+  font-weight: bold;
+  color: #ffffff;
+  padding: 0.65em 2.4em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  border: 0cm;
+}
+
 .button-small-white {
   background-color: #ffffff;
   border-radius: 30px;
@@ -73,11 +158,93 @@
   padding: 15px 2.5rem;
 }
 .button-big-orange {
+  scale: 140%;
   background-color: #ff9f1c;
-  border-radius: 35px;
-  font-size: 1.5rem;
-  box-shadow: 0 5px 5px 2px #868686;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  filter: drop-shadow(1px 4px 2px #00000065);
   font-weight: bold;
   color: #ffffff;
-  padding: 10px 1em;
+  padding: 0.65em 1.5em;
+  margin-top: 1em;
+  border: 0cm;
+}
+
+.button-big-orange:hover {
+  transition-duration: 0.2s;
+  scale: 143%;
+  filter: brightness(1.1);
+}
+
+.button-big-orange:active {
+  transition-duration: 0.1s;
+  scale: 136%;
+  filter: brightness(0.9);
+}
+
+#button-saikku:hover {
+  transition-duration: 0.2s;
+  scale: 103%;
+  filter: brightness(1.1);
+}
+
+#button-lupa:hover {
+  transition-duration: 0.2s;
+  scale: 103%;
+  filter: brightness(1.1);
+}
+
+#button-ylityo:hover {
+  transition-duration: 0.2s;
+  scale: 103%;
+  filter: brightness(1.1);
+}
+
+#button-liukuma:hover {
+  transition-duration: 0.2s;
+  scale: 103%;
+  filter: brightness(1.1);
+}
+
+#button-saikku:active {
+  transition-duration: 0.1s;
+  scale: 98%;
+  filter: brightness(0.9);
+}
+
+#button-lupa:active {
+  transition-duration: 0.1s;
+  scale: 98%;
+  filter: brightness(0.9);
+}
+
+#button-ylityo:active {
+  transition-duration: 0.1s;
+  scale: 98%;
+  filter: brightness(0.9);
+}
+
+#button-liukuma:active {
+  transition-duration: 0.1s;
+  scale: 98%;
+  filter: brightness(0.9);
+}
+
+.button-small-blue:hover {
+  transition-duration: 0.2s;
+  scale: 82%;
+  filter: brightness(1.1);
+}
+
+.button-small-blue:active {
+  transition-duration: 0.1s;
+  scale: 78%;
+  filter: brightness(0.9);
+}
+
+.kello {
+  margin-top: 0.5em;
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+  color: #000000;
 }
