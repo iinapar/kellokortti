@@ -1,17 +1,41 @@
 <div class="container">
+  <div id="containerlogo">
+    <img
+      id="isologo"
+      src="../../assets/icons/kellokortti-logo2.png"
+      alt="My Image"
+    />
+  </div>
   <div class="container-laskuri">
     <button
-      *ngIf="!tyo"
+      *ngIf="!tyoKaynnissa && !tauko"
       class="button-big-orange"
       (click)="doActionBasicTimer('start')"
       (click)="sisaan()"
     >
       Käynnistä
     </button>
-    <button *ngIf="tyo" class="button-big-orange" (click)="aloitatauko()">
+    <button
+      *ngIf="!tyo && tauko"
+      class="button-big-orange"
+      (click)="tauoltasisaan()"
+    >
+      Käynnistä
+    </button>
+    <button
+      *ngIf="tyoKaynnissa"
+      class="button-big-orange"
+      (click)="aloitatauko()"
+    >
       Tauko
     </button>
-
+    <button
+      *ngIf="tyoKaynnissa"
+      class="button-big-orange"
+      (click)="lopetaPaiva()"
+    >
+      Ulos
+    </button>
     <button *ngIf="tyovalmis" class="button-big">Tuloste</button>
     <span *ngIf="!showTimer">
       <button class="button-small-blue" (click)="toggleTimer()">
@@ -24,14 +48,17 @@
       </button></span
     >
     <div [style.display]="showTimer ? 'block' : 'none'">
-      <cd-timer [autoStart]="false" #basicTimer></cd-timer>
+      <cd-timer class="kello" [autoStart]="false" #basicTimer></cd-timer>
     </div>
   </div>
 </div>
 
 <div class="container-muut">
-  <button class="button-small-blue">Sairausp.olo</button>
-  <button class="button-small-white">Luvallinen p.olo</button>
-  <button class="button-small-orange">Ylityö</button>
-  <button class="button-small-white">Liukuma</button>
+  <button id="button-saikku">Sairausp.olo</button>
+  <button id="button-lupa">Luvallinen p.olo</button>
+  <button id="button-ylityo">Ylityö</button>
+  <button id="button-liukuma">Liukuma</button>
 </div>
+
+<p>Edellinen leimaus : {{ viesti }}</p>
+<p>{{ saldo }}</p>
