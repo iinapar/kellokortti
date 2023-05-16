@@ -1,9 +1,19 @@
 <div class="container">
   <div class="container-laskuri">
-    <button class="button-big-orange" (click)="doActionBasicTimer('start')">Käynnistä</button>
+    <button class="button-big-orange" (click)="doActionBasicTimer('start')">
+      Käynnistä
+    </button>
     <button class="button-big">Tuloste</button>
-    <span *ngIf="!showTimer"> <button class="button-small-blue" (click)="toggleTimer()">Näytä päivän saldo</button></span>
-    <span *ngIf="showTimer"> <button class="button-small-blue" (click)="toggleTimer()">Piilota päivän saldo</button></span>
+    <span *ngIf="!showTimer">
+      <button class="button-small-blue" (click)="toggleTimer()">
+        Näytä päivän saldo
+      </button></span
+    >
+    <span *ngIf="showTimer">
+      <button class="button-small-blue" (click)="toggleTimer()">
+        Piilota päivän saldo
+      </button></span
+    >
     <div [style.display]="showTimer ? 'block' : 'none'">
       <cd-timer [autoStart]="false" #basicTimer></cd-timer>
     </div>
