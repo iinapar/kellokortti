@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { CdTimerComponent, TimeInterface } from 'angular-cd-timer';
 
 @Component({
   selector: 'app-userview',
@@ -6,11 +7,27 @@ import { Component } from '@angular/core';
   styleUrls: ['./userview.component.scss'],
 })
 export class UserviewComponent {
-  saldo = false;
+  showTimer = false;
+  @ViewChild(CdTimerComponent, { static: false }) basicTimer!: CdTimerComponent;
 
-  start() {}
-  stop() {}
-  showSaldo() {
-    this.saldo = !this.saldo;
+  toggleTimer() {
+    this.showTimer = !this.showTimer;
+  }
+
+  doActionBasicTimer(action: String) {
+    switch (action) {
+      case 'start':
+        this.basicTimer.start();
+        break;
+      case 'resume':
+        this.basicTimer.resume();
+        break;
+      case 'reset':
+        this.basicTimer.reset();
+        break;
+      default:
+        this.basicTimer.stop();
+        break;
+    }
   }
 }
