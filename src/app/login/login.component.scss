@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+body,
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Montserrat', sans-serif;
+}
 span {
   color: red;
 }
@@ -8,26 +17,184 @@ span {
 .info2 {
   background-color: #ffbf69;
 }
+
 p {
+  font-family: 'Montserrat', sans-serif;
   font-weight: bold;
 }
 
-.bcontainer {
+#loginviesti {
+  font-size: 1.5em;
+  margin-top: 2em;
   display: flex;
-
   justify-content: center;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.containermt-5 {
+  filter: drop-shadow(1px 4px 2px #00000065);
+  border-radius: 30px;
+  background-color: #cbf3f0;
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+  margin: auto;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.bcontainer {
+  margin-top: 2em;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 button {
+  padding: 0.5em 1em;
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
   margin-left: 2em;
   border-radius: 30px;
-  border-color: orange;
+  border-color: #ffa01c00;
 }
 
 .binfo {
-  justify-content: right;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #myModal {
   margin-top: 20em;
+}
+
+.modal-content {
+  background-color: #cbf3f0;
+  text-align: center;
+  width: 95%;
+  margin: auto;
+  border-radius: 30px;
+}
+
+.modal-header {
+  text-align: center;
+}
+
+.modal-title {
+  text-align: center;
+  font-weight: 600;
+}
+
+.modal-body {
+  font-weight: 500;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-danger {
+  font-weight: 900;
+  filter: drop-shadow(1px 1px 2px #00000036);
+  background-color: #ff9f1c;
+  margin: 0%;
+}
+
+.btn-danger:hover {
+  transition-duration: 0.2s;
+  scale: 105%;
+  filter: brightness(1.1);
+}
+
+.btn-danger:active {
+  transition-duration: 0.1s;
+  scale: 99%;
+  filter: brightness(0.9);
+}
+
+#isologo {
+  filter: drop-shadow(1px 2px 2px #00000029);
+  width: 50%;
+}
+
+#containerlogo {
+  margin-top: 8em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-primary-info2 {
+  filter: drop-shadow(1px 1px 2px #00000036);
+  background-color: #ffbf69;
+  margin: 0%;
+}
+
+.btn-primary-info {
+  font-weight: 900;
+  filter: drop-shadow(1px 1px 2px #00000036);
+  background-color: #ff9f1c;
+  margin: 0%;
+}
+
+.btn-primary-info:hover {
+  transition-duration: 0.2s;
+  scale: 105%;
+  filter: brightness(1.1);
+}
+
+.btn-primary-info2:hover {
+  transition-duration: 0.2s;
+  scale: 105%;
+  filter: brightness(1.1);
+}
+
+.btn-primary-info:active {
+  transition-duration: 0.1s;
+  scale: 99%;
+  filter: brightness(0.9);
+}
+
+.btn-primary-info2:active {
+  transition-duration: 0.1s;
+  scale: 99%;
+  filter: brightness(0.9);
+}
+
+.alert-dismissible {
+  margin-top: 1.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  text-align: center;
+  background-color: #ffbf69;
+  margin: auto;
+  width: 90%;
+  filter: drop-shadow(2px 1px 2px #00000066);
+}
+
+#tunnus,
+#salasana {
+  scale: 115%;
+  border-color: #ff9f1c;
+  border-radius: 30px;
+}
+
+input {
+  text-align: center;
+}
+
+::-webkit-input-placeholder {
+  text-align: center;
+}
+
+:-moz-placeholder {
+  text-align: center;
 }

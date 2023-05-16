@@ -1,8 +1,17 @@
 <!--Sisääkirjautumisen formit. Validoinnin vaatimuksena, että tunnus ja salasana ei saa olla tyhjiä.
  -->
 <div class="sivu">
-  <div class="container mt-5">
-    <p>Kirjaudu sisään</p>
+  <div id="containerlogo">
+    <img
+      id="isologo"
+      src="../../assets/icons/kellokortti-logo2.png"
+      alt="My Image"
+    />
+  </div>
+  <div id="loginviesti">
+    <p id="Kirjaudu">Kirjaudu sisään</p>
+  </div>
+  <div class="containermt-5">
     <form
       #f="ngForm"
       (ngSubmit)="onSubmit(f.value, f.valid!)"
@@ -10,13 +19,13 @@
       novalidate
     >
       <div class="mb-3 mt-3">
-        <label for="tunnus" class="form-label">Tunnus:</label>
         <input
           #tunnus="ngModel"
           type="text"
           class="form-control"
           id="tunnus"
           name="tunnus"
+          placeholder="Käyttäjätunnus"
           ngModel
           required
           email
@@ -26,13 +35,13 @@
         >
       </div>
       <div class="mb-3 mt-3">
-        <label for="salasana" class="form-label">Salasana:</label>
         <input
           #salasana="ngModel"
           type="password"
           class="form-control"
           id="salasana"
           name="salasana"
+          placeholder="Salasana"
           ngModel
           required
         />
@@ -45,13 +54,11 @@
         >
       </div>
       <div class="bcontainer">
-        <button type="submit" class="btn btn-primary btn-lg info">
-          Lähetä
-        </button>
+        <button type="submit" class="btn-primary-info">Lähetä</button>
         <div class="binfo">
           <button
             type="button"
-            class="btn btn-primary btn-lg info2"
+            class="btn-primary-info2"
             data-bs-toggle="modal"
             data-bs-target="#myModal"
           >
@@ -60,15 +67,15 @@
         </div>
       </div>
     </form>
-    <div *ngIf="this.error" class="alert alert-danger mt-3 alert-dismissible">
-      <button
-        type="button"
-        class="btn-close"
-        data-bs-dismiss="alert"
-        (click)="changeError()"
-      ></button>
-      <strong>Tunnus tai salasana väärin.</strong>
-    </div>
+  </div>
+  <div *ngIf="this.error" class="alert alert-danger mt-3 alert-dismissible">
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="alert"
+      (click)="changeError()"
+    ></button>
+    <strong>Tunnus tai salasana väärin.</strong>
   </div>
 </div>
 
@@ -77,21 +84,19 @@
     <div class="modal-content">
       <!-- Modal Header -->
       <div class="modal-header">
-        <h4 class="modal-title">Kiitos kun pelasit</h4>
-        <button
-          type="button"
-          class="btn-close"
-          data-bs-dismiss="modal"
-        ></button>
+        <h4 class="modal-title">Sisäänkirjautuminen</h4>
       </div>
 
       <!-- Modal body -->
 
-      <div class="modal-body">Paljon onnea!!</div>
+      <div class="modal-body">
+        Kirjaudu työaikaseurantaan käyttämällä työnantajan sinulle luovuttamia
+        tunnuksia. Jos et muista tunnuksiasi, ole yhteydessä esihenkilöösi.
+      </div>
 
       <!-- Modal footer -->
       <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
+        <button type="button" class="btn-danger" data-bs-dismiss="modal">
           Sulje
         </button>
       </div>
