@@ -1,0 +1,11 @@
+<div *ngIf="worker">
+  {{ worker.etunimi }}
+  {{ worker.sukunimi }}
+
+  <div *ngFor="let work of worker.kirjautumiset">
+    {{ work.sisaan }}
+    {{ work.ulos }}
+    {{ work.taukoAlku }}
+    {{ work.taukoLoppu }}
+  </div>
+</div>

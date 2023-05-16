@@ -18,26 +18,31 @@ export class InMemoryDataService implements InMemoryDbService {
         saldo: 30,
       },
     ];
-    return { users };
-  }
-  createDbWorkers() {
+
     const workers: worker[] = [
       {
+        id: 1,
         tunnus: 'AC2657',
-        sisaan: '12/5/2023 08:01',
-        ulos: '12/5/2023, 16:03',
-        taukoAlku: '12/5/2023, 11:02',
-        taukoLoppu: '12/5/2023, 12:05',
+        etunimi: 'Marja',
+        sukunimi: 'Sirpaleena',
+        kirjautumiset: [{ sisaan: '12/5/2023 08:01', ulos: '12/5/2023, 16:03', taukoAlku: '12/5/2023, 11:02', taukoLoppu: '12/5/2023, 12:05' }],
       },
       {
+        id: 2,
         tunnus: 'AD8912',
-        sisaan: '12/5/2023 07:03',
-        ulos: '12/5/2023, 14:35',
-        taukoAlku: '12/5/2023, 09:58',
-        taukoLoppu: '12/5/2023, 10:34',
+        etunimi: 'Esko',
+        sukunimi: 'Markkanen',
+        kirjautumiset: [
+          {
+            sisaan: '12/5/2023 07:03',
+            ulos: '12/5/2023, 14:35',
+            taukoAlku: '12/5/2023, 09:58',
+            taukoLoppu: '12/5/2023, 10:34',
+          },
+        ],
       },
     ];
-    return { workers };
+    return { workers, users };
   }
   genId(regs: user[]): number {
     return regs.length > 0 ? Math.max(...regs.map((reg) => reg.id)) + 1 : 1;

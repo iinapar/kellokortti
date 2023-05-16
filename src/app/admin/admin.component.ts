@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { worker } from '../worker';
+import { WorkerService } from '../worker.service';
 
 @Component({
   selector: 'app-admin',
@@ -6,33 +8,56 @@ import { Component } from '@angular/core';
   styleUrls: ['./admin.component.scss'],
 })
 export class AdminComponent {
-  workers = [
-    { etunimi: 'Marja', sukunimi: 'Sirpaleena' },
-    { etunimi: 'Esko', sukunimi: 'Markkanen' },
-    { etunimi: 'Markku', sukunimi: 'Petteri' },
-  ];
+  workers: worker[] = [];
+  addWorker = false;
+  tunnus = '';
+  name = '';
+  lastname = '';
+  kirjautumiset = false;
 
-  constructor() {}
+  constructor(private workerService: WorkerService) {}
 
   ngOnInit(): void {
-    // this.getWorkers();
+    this.getWorkers();
   }
 
-  // getWorkers(): void {
-  //   this.workerService.getWorkers().subscribe((workers) => (this.workers = workers));
-  // }
-  //  add(name: string): void {
-  //   name = name.trim();
-  //   if (!name) {
-  //     return;
-  //   }
-  //   this.workerService.addWorker({ name }).subscribe((worker) => {
-  //     this.workers.push(worker);
-  //   });
-  // }
+  getWorkers(): void {
+    this.workerService.getWorkers().subscribe((workers) => (this.workers = workers));
+  }
 
-  // delete(worker: Worker): void {
-  //   this.workers = this.workers.filter((h) => h !== worker);
-  //   this.workerService.deleteHero(worker.id).subscribe();
-  // }
+  showKirjautumiset() {
+    this.kirjautumiset = !this.kirjautumiset;
+  }
+
+  addW() {
+    this.addWorker = !this.addWorker;
+  }
+
+  onSubmit(f: any) {
+    this.workerService
+      .addWorker({
+        id: 3,
+        tunnus: f.tunnus,
+        etunimi: f.name,
+        sukunimi: f.lastname,
+        kirjautumiset: [
+          {
+            sisaan: '',
+            ulos: '',
+            taukoAlku: '',
+            taukoLoppu: '',
+          },
+        ],
+      })
+      .subscribe((worker) => {
+        this.workers.push(worker);
+      });
+
+    this.addWorker = !this.addWorker;
+  }
+
+  delete(worker: worker): void {
+    this.workers = this.workers.filter((h) => h !== worker);
+    this.workerService.deleteHero(worker.tunnus).subscribe();
+  }
 }

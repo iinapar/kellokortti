@@ -13,6 +13,7 @@ import { CdTimerModule } from 'angular-cd-timer';
 import { TimerComponent } from './timer/timer.component';
 import { OutputComponent } from './output/output.component';
 import { AdminComponent } from './admin/admin.component';
+import { WorkerComponent } from './worker/worker.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,6 +23,7 @@ import { AdminComponent } from './admin/admin.component';
     TimerComponent,
     OutputComponent,
     AdminComponent,
+    WorkerComponent,
   ],
   imports: [
     BrowserModule,
