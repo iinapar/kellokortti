@@ -32,7 +32,7 @@ export class LoginComponent {
     ) {
       this.authservice.isLogged = true;
 
-      this.router.navigate(['calendar']);
+      this.router.navigate(['userview']);
     } else {
       this.error = true;
     }
