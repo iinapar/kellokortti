@@ -1,10 +1,20 @@
 <div class="container-laskuri">
-  <button class="button-big-orange" (click)="start()">Käynnistä</button>
-  <button class="button-big" (click)="stop()">Tuloste</button>
-
-  <button class="button-small-blue" (click)="showSaldo()">Päivän saldo</button>
-  <div *ngIf="saldo">
-    <app-timer></app-timer>
+  <button class="button-big-orange" (click)="doActionBasicTimer('start')">
+    Käynnistä
+  </button>
+  <button class="button-big">Tuloste</button>
+  <span *ngIf="!showTimer">
+    <button class="button-small-blue" (click)="toggleTimer()">
+      Näytä päivän saldo
+    </button></span
+  >
+  <span *ngIf="showTimer">
+    <button class="button-small-blue" (click)="toggleTimer()">
+      Piilota päivän saldo
+    </button></span
+  >
+  <div [style.display]="showTimer ? 'block' : 'none'">
+    <cd-timer [autoStart]="false" #basicTimer></cd-timer>
   </div>
 </div>
 
@@ -12,5 +22,5 @@
   <button class="button-small-blue">Sairausp.olo</button>
   <button class="button-small-white">Luvallinen p.olo</button>
   <button class="button-small-orange">Ylityö</button>
-  <button class="button-small-white" (click)="(stop)">Liukuma</button>
+  <button class="button-small-white">Liukuma</button>
 </div>

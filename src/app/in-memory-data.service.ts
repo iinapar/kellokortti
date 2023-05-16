@@ -12,9 +12,9 @@ export class InMemoryDataService implements InMemoryDbService {
     const users: user[] = [
       {
         id: 1,
-        ktunnus: 'ab7762@student.jamk.fi',
-        salasana: 'Miguela88',
-        saldo: 10,
+        ktunnus: 'FFcc45',
+        salasana: 'Tiko',
+        saldo: 30,
       },
     ];
     return { users };

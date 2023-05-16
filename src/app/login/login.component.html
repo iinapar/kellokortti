@@ -19,10 +19,9 @@
           name="tunnus"
           ngModel
           required
-          email
         /><span
-          [hidden]="!f.form.hasError('email', 'tunnus') || tunnus.pristine"
-          >Sähköposti on tunnus</span
+          [hidden]="!f.form.hasError('required', 'tunnus') || tunnus.pristine"
+          >Kirjoita käyttäjätunnus</span
         >
       </div>
       <div class="mb-3 mt-3">
@@ -77,7 +76,7 @@
     <div class="modal-content">
       <!-- Modal Header -->
       <div class="modal-header">
-        <h4 class="modal-title">Kiitos kun pelasit</h4>
+        <h4 class="modal-title">Kellokorttisovellus</h4>
         <button
           type="button"
           class="btn-close"
@@ -87,7 +86,10 @@
 
       <!-- Modal body -->
 
-      <div class="modal-body">Paljon onnea!!</div>
+      <div class="modal-body">
+        Kirjaudu työaikaseurantaan käyttämällä työnantajan sinulle luovuttamia
+        tunnuksia. Jos et muista tunnuksiasi, ole yhteydessä esihenkilöösi.
+      </div>
 
       <!-- Modal footer -->
       <div class="modal-footer">
