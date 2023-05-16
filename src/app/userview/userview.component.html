@@ -1,17 +1,34 @@
 <div class="container">
   <div class="container-laskuri">
     <button
-      *ngIf="!tyo"
+      *ngIf="!tyoKaynnissa && !tauko"
       class="button-big-orange"
       (click)="doActionBasicTimer('start')"
       (click)="sisaan()"
     >
       Käynnistä
     </button>
-    <button *ngIf="tyo" class="button-big-orange" (click)="aloitatauko()">
+    <button
+      *ngIf="!tyo && tauko"
+      class="button-big-orange"
+      (click)="tauoltasisaan()"
+    >
+      Käynnistä
+    </button>
+    <button
+      *ngIf="tyoKaynnissa"
+      class="button-big-orange"
+      (click)="aloitatauko()"
+    >
       Tauko
     </button>
-
+    <button
+      *ngIf="tyoKaynnissa"
+      class="button-big-orange"
+      (click)="lopetaPaiva()"
+    >
+      Ulos
+    </button>
     <button *ngIf="tyovalmis" class="button-big">Tuloste</button>
     <span *ngIf="!showTimer">
       <button class="button-small-blue" (click)="toggleTimer()">
@@ -35,3 +52,6 @@
   <button class="button-small-orange">Ylityö</button>
   <button class="button-small-white">Liukuma</button>
 </div>
+
+<p>Edellinen leimaus : {{ viesti }}</p>
+<p>{{ saldo }}</p>
