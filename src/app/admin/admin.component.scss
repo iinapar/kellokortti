@@ -1,21 +1,123 @@
 input {
   border-radius: 25px;
- }
- 
- input, ::placeholder {
-   padding-left: 1rem;
- }
- 
- button {
-   border-radius: 30px;
-   padding: 20px;
-   padding: 0px 8px
- }
- 
- .container {
-   background-color: #2EC4B6;
-   border-radius: 25px;
-   color: white;
-   box-shadow: 5px 5px 5px rgb(145, 145, 145);
-   
- }
+  padding: 0.5rem 0.5rem;
+  box-shadow: 0 3px 5px 2px #a3a3a3;
+  background-color: white;
+  border: none;
+  margin: 1rem;
+  width: 72%;
+}
+
+input,
+::placeholder {
+  padding-left: 1rem;
+}
+
+.flexbox {
+  display: flex;
+  justify-content: space-between;
+}
+
+.name {
+  width: 80%;
+  margin-top: 0.5rem;
+  margin-left: 0.25rem;
+  font-size: 1.25rem;
+}
+
+#button_search {
+  border-radius: 25px;
+  background-color: white;
+  border: none;
+  padding: 0.5rem 0.3rem;
+  margin: 1rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  color: #ff9f1c;
+  font-size: 1rem;
+  box-shadow: 0 3px 5px 2px #a3a3a3;
+  font-weight: bold;
+}
+
+#button_add_worker {
+  border-radius: 25px;
+  background-color: white;
+  border: none;
+  padding: 0.5rem 0.7rem;
+  margin: 1rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  color: #ff9f1c;
+  font-size: 1rem;
+  box-shadow: 0 3px 5px 2px #a3a3a3;
+  font-weight: bold;
+}
+
+#button_edit_admin {
+  border-radius: 25px;
+  background-color: #ff9f1c;
+  border: none;
+  padding: 0.5rem 0.7rem;
+  margin: 1rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  color: #ffffff;
+  font-size: 1rem;
+  box-shadow: 0 3px 5px 2px #a3a3a3;
+  font-weight: bold;
+}
+
+.button_edit_delete {
+  border-radius: 25px;
+  background-color: #ffffff;
+  border: none;
+  padding: 0.4rem 0.4rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1rem;
+  box-shadow: 0 3px 5px 2px #a3a3a3;
+  font-weight: bold;
+
+  width: 2.6rem;
+  height: 2.5rem;
+  margin: 0.25rem;
+}
+
+.container {
+  background-color: #2ec4b6;
+  border-radius: 25px;
+  color: white;
+  box-shadow: 5px 5px 5px rgb(145, 145, 145);
+  max-width: 92%;
+}
+
+svg {
+  width: 2rem;
+  height: 1.5rem;
+  fill: #2ec4b6;
+  stroke-width: 1rem;
+}
+
+.delete {
+  fill: rgb(215, 66, 66);
+}
+
+.search {
+  width: 2rem;
+  height: 1.5rem;
+  margin-top: 0.1rem;
+  margin-left: 0.12rem;
+}
+
+.svg_bg {
+  background-color: #ffffff;
+  border-radius: 25px;
+  box-shadow: 0 3px 5px 2px #a3a3a3;
+  width: 2.6rem;
+  height: 2.5rem;
+  margin: 0.25rem;
+}
