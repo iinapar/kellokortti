@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  background-color: #cbf3f0;
+  border-radius: 30px;
+  padding: 1rem;
+  margin: 0.5rem;
+  box-shadow: 5px 5px 5px rgb(143, 143, 143);
+}
+
+svg {
+  margin-left: 1rem;
+  color: #ff9f1c;
+}
+
+a :hover {
+  color: #f4d8b0;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
