@@ -9,6 +9,10 @@ button {
   font-family: 'Montserrat', sans-serif;
 }
 
+p {
+  margin: 0;
+}
+
 #isologo {
   filter: drop-shadow(1px 2px 2px #00000029);
   width: 25%;
@@ -37,6 +41,25 @@ button {
   margin-bottom: 3em;
   //laatikko yht 387x288
 }
+
+.container-leimaus {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9em;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #cbf3f0;
+  border-radius: 30px;
+  filter: drop-shadow(3px 3px 4px #00000079);
+  align-content: center;
+  margin: auto;
+  padding: 0.6rem 0.6rem;
+  width: 89%;
+  margin-bottom: 2em;
+  //laatikko yht 387x288
+}
+
 .container-muut {
   display: flex;
   justify-content: center;
@@ -166,7 +189,34 @@ button {
   font-weight: bold;
   color: #ffffff;
   padding: 0.65em 1.5em;
+  margin-top: 1.5em;
+  border: 0cm;
+}
+
+.button-big-orange2 {
+  scale: 140%;
+  background-color: #ffffff;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  filter: drop-shadow(1px 4px 2px #00000065);
+  font-weight: bold;
+  color: #ff9f1c;
+  padding: 0.65em 1.7em;
   margin-top: 1em;
+  border: 1px;
+  border-style: solid;
+}
+
+.button-big-orange3 {
+  scale: 140%;
+  background-color: #ff9f1c;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  filter: drop-shadow(1px 4px 2px #00000065);
+  font-weight: bold;
+  color: #ffffff;
+  padding: 0.65em 2em;
+  margin-top: 1.65em;
   border: 0cm;
 }
 
@@ -176,7 +226,31 @@ button {
   filter: brightness(1.1);
 }
 
+.button-big-orange2:hover {
+  transition-duration: 0.2s;
+  scale: 143%;
+  filter: brightness(1.1);
+}
+
+.button-big-orange3:hover {
+  transition-duration: 0.2s;
+  scale: 143%;
+  filter: brightness(1.1);
+}
+
 .button-big-orange:active {
+  transition-duration: 0.1s;
+  scale: 136%;
+  filter: brightness(0.9);
+}
+
+.button-big-orange2:active {
+  transition-duration: 0.1s;
+  scale: 136%;
+  filter: brightness(0.9);
+}
+
+.button-big-orange3:active {
   transition-duration: 0.1s;
   scale: 136%;
   filter: brightness(0.9);
