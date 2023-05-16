@@ -1,39 +1,83 @@
-.container {
-  background-color: #cbf3f0;
-  margin: 1rem;
-}
 .container-laskuri {
-  display: flexbox;
-  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
   background-color: #cbf3f0;
   border-radius: 30px;
-  //tähän laatikon shadow
-  //laatikko yht
+  box-shadow: 0 5px 5px 2px #868686;
+  align-content: center;
+  margin: auto;
+  padding: 1rem 2rem;
+  width: 90%;
+  //laatikko yht 387x288
 }
 .container-muut {
   display: grid;
   grid-template-columns: 85px 85px;
   grid-template-rows: 206px 206px;
-  column-gap: 10px;
-  row-gap: 10px;
+  column-gap: 3em;
   background-color: #cbf3f0;
   border-radius: 30px;
-  //tähän laatikon shadow
+  box-shadow: 0 5px 5px 2px #868686;
+  align-items: center;
+  justify-items: center;
+  width: 90%;
+  margin: auto;
+
   //laatikko yht 423x180
-  //onnee gridin värkkäilyyn
 }
 .button-big {
   //tuloste-nappi
+  border-radius: 35px;
+  font-size: 1.5rem;
+  box-shadow: 0 5px 5px 2px #868686;
+  font-weight: bold;
+  color: #ffffff;
+  padding: 10px 40px;
 }
 .button-small-blue {
   background-color: #2ec4b6;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ffffff;
+  box-shadow: 0 5px 5px 2px #868686;
+  padding: 15px 1rem;
 }
 .button-small-white {
   background-color: #ffffff;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #2ec4b6;
+  box-shadow: 0 5px 5px 2px #868686;
+  padding: 5px 1rem;
+}
+.button-small-white2 {
+  background-color: #ffffff;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ff9f1c;
+  box-shadow: 0 5px 5px 2px #868686;
+  padding: 15px 1.5rem;
 }
 .button-small-orange {
   background-color: #ff9f1c;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ffffff;
+  box-shadow: 0 5px 5px 2px #868686;
+  padding: 15px 2.5rem;
 }
 .button-big-orange {
   background-color: #ff9f1c;
+  border-radius: 35px;
+  font-size: 1.5rem;
+  box-shadow: 0 5px 5px 2px #868686;
+  font-weight: bold;
+  color: #ffffff;
+  padding: 10px 1em;
 }
