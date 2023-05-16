@@ -9,15 +9,95 @@
 }
 
 svg {
-  margin-left: 1rem;
+
   color: #ff9f1c;
 }
 
 a :hover {
   color: #f4d8b0;
 }
+.button :hover {
+  color: #f4d8b0;
+}
 
 .center {
   display: flex;
   justify-content: center;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: center;
+}
+
+.modal-title {
+  font-weight: 900;
+}
+
+.modal-content {
+  background-color: #cbf3f0;
+  border-radius: 30px;
+}
+
+.btn-modal-orange {
+  background-color: #ff9f1c;
+  border-radius: 30px;
+  color: white;
+  width: 7rem;
+  margin: 0.3rem;
+}
+.btn-modal-white {
+  background-color: white;
+  border-radius: 30px;
+  color: #ff9f1c;
+  width: 7rem;
+  margin: 0.3rem;
+}
+
+.btn-small-a {
+  background-color: #2ec4b6;
+  border-radius: 30px;
+  color: white;
+  width: 3.8rem;
+  font-size: 0.5rem;
+  margin-bottom: 0.2rem;
+}
+
+.btn-small-b {
+  background-color: white;
+  border-radius: 30px;
+  color: #2ec4b6;
+  width: 3.8rem;
+  font-size: 0.5rem;
+  margin-bottom: 0.2rem;
+}
+
+.btn-small-c {
+  background-color: #ff9f1c;
+  border-radius: 30px;
+  color: white;
+  width: 3.8rem;
+  font-size: 0.5rem;
+}
+
+.btn-small-white {
+  background-color: white;
+  border-radius: 30px;
+  color: #ff9f1c;
+  width: 3.8rem;
+  font-size: 0.5rem;
+}
+
+.big-button {
+  background-color: white;
+  border-radius: 30px;
+  color: #2EC4B6;
+  width: 9rem;
+  font-weight: bold;
+
+}
+
+.row {
+  margin-bottom: 1rem;
+  
 }
