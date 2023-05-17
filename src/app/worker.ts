@@ -4,12 +4,11 @@ export interface worker {
   etunimi: string;
   sukunimi: string;
   tunnus: string;
-  kirjautumiset: [
-    {
-      sisaan: string;
-      ulos: string;
-      taukoAlku: string;
-      taukoLoppu: string;
-    }
-  ];
+  kirjautumiset: {
+    pvm: string;
+    sisaan: string;
+    ulos: string;
+    taukoAlku: string;
+    taukoLoppu: string;
+  }[];
 }

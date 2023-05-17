@@ -32,4 +32,8 @@ export class WorkerService {
     const url = `${this.workerUrl}/${id}`;
     return this.http.get<worker>(url);
   }
+
+  updateWorker(worker: any) {
+    return this.http.put(this.workerUrl, worker, this.httpOptions);
+  }
 }
