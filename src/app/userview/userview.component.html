@@ -36,7 +36,7 @@
     >
       Ulos
     </button>
-    <button routerLink="../output" *ngIf="tyovalmis" class="button-big">
+    <button class="button-big-orange4" routerLink="../output" *ngIf="tyovalmis">
       Tuloste
     </button>
     <span *ngIf="!showTimer">
@@ -56,7 +56,9 @@
 </div>
 
 <div class="container-leimaus">
-  <p>Edellinen leimaus : {{ viesti }}</p>
+  <p class="leimaviesti">
+    Edellinen leimaus : <br />{{ viesti }} <br />{{ saldo }}
+  </p>
 </div>
 <div class="container-liukuma"></div>
 
@@ -109,4 +111,7 @@
       </div>
     </div>
   </div>
+</div>
+<div class="navigaatio">
+  <app-navbar></app-navbar>
 </div>
