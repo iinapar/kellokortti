@@ -1,7 +1,13 @@
-<div>
+<div class="hakupalkki">
   <input placeholder="Hae työntekijä" />
   <button id="button_search">
-    <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48" class="search">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      height="48"
+      viewBox="0 96 960 960"
+      width="48"
+      class="search"
+    >
       <path
         d="M796 935 533 672q-30 26-69.959 40.5T378 727q-108.162 0-183.081-75Q120 577 120 471t75-181q75-75 181.5-75t181 75Q632 365 632 471.15 632 514 618 554q-14 40-42 75l264 262-44 44ZM377 667q81.25 0 138.125-57.5T572 471q0-81-56.875-138.5T377 275q-82.083 0-139.542 57.5Q180 390 180 471t57.458 138.5Q294.917 667 377 667Z"
       />
@@ -9,25 +15,64 @@
   </button>
 </div>
 
-<div class="flexbox">
-  <button id="button_add_worker" (click)="addW()">Lisää työntekijä</button>
-  <button id="button_edit_admin">Muokkaa adminin tietoja</button>
+<div id="lisaysnapit">
+  <button id="button_add_worker" (click)="addW()">Lisää uusi työntekijä</button>
+  <button id="button_edit_admin">Ylläpitäjän muokkaukset</button>
 </div>
 
-<div *ngIf="addWorker">
+<div id="lisayslomake" *ngIf="addWorker">
   <form #f="ngForm" (ngSubmit)="onSubmit(f.value)">
     <!--Työntekijän tunnus input-->
-    <label for="name">Tunnus:</label>
-    <input type="text" class="form-control" id="tunnus" name="tunnus" placeholder="Kirjoita tunnus" [(ngModel)]="tunnus" required ngModel />
+    <input
+      type="text"
+      class="form-control"
+      id="tunnus"
+      name="tunnus"
+      placeholder="Kirjoita tunnus"
+      [(ngModel)]="tunnus"
+      required
+      ngModel
+    />
     <!--Etunimi input-->
-    <label for="name">Etunimi:</label>
-    <input type="text" class="form-control" id="name" name="name" placeholder="Kirjoita etunimi" [(ngModel)]="name" required ngModel />
+    <input
+      type="text"
+      class="form-control"
+      id="name"
+      name="name"
+      placeholder="Kirjoita etunimi"
+      [(ngModel)]="name"
+      required
+      ngModel
+    />
     <!--Sukunimi input-->
-    <label for="name">Sukunimi:</label>
-    <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Kirjoita sukunimi" [(ngModel)]="lastname" required ngModel />
+    <input
+      type="text"
+      class="form-control"
+      id="lastname"
+      name="lastname"
+      placeholder="Kirjoita sukunimi"
+      [(ngModel)]="lastname"
+      required
+      ngModel
+    />
     <!-- Painike uuden työntekijän lisäämiselle -->
-    <button type="submit" *ngIf="addnew" [disabled]="f.invalid" class="btn">Lisää työntekijä</button>
-    <button type="submit" *ngIf="saveedited" [disabled]="f.invalid" class="btn">Tallenna muutokset</button>
+    <button
+      id="button-lisays"
+      type="submit"
+      *ngIf="addnew"
+      [disabled]="f.invalid"
+    >
+      Lisää työntekijä
+    </button>
+    <button
+      id="button-tallennus"
+      type="submit"
+      *ngIf="saveedited"
+      [disabled]="f.invalid"
+      class="btn"
+    >
+      Tallenna muutokset
+    </button>
   </form>
 </div>
 
@@ -36,12 +81,19 @@
     <div *ngFor="let worker of workers">
       <div class="row">
         <div class="col-8">
-          <div type="button" routerLink="/detail/{{ worker.id }}">{{ worker.etunimi }} {{ worker.sukunimi }}</div>
+          <div type="button" routerLink="/detail/{{ worker.id }}">
+            {{ worker.etunimi }} {{ worker.sukunimi }}
+          </div>
         </div>
         <div class="col-4">
           <!--- Edit-button-->
           <button class="button_edit_delete" (click)="update(worker)">
-            <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="48"
+              viewBox="0 96 960 960"
+              width="48"
+            >
               <path
                 d="M180 876h44l443-443-44-44-443 443v44Zm614-486L666 262l42-42q17-17 42-17t42 17l44 44q17 17 17 42t-17 42l-42 42Zm-42 42L248 936H120V808l504-504 128 128Zm-107-21-22-22 44 44-22-22Z"
               />
@@ -49,7 +101,13 @@
           </button>
           <!--- Delete-button-->
           <button class="button_edit_delete" (click)="delete(worker)">
-            <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48" class="delete">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="48"
+              viewBox="0 96 960 960"
+              width="48"
+              class="delete"
+            >
               <path
                 d="M261 936q-24.75 0-42.375-17.625T201 876V306h-41v-60h188v-30h264v30h188v60h-41v570q0 24-18 42t-42 18H261Zm438-630H261v570h438V306ZM367 790h60V391h-60v399Zm166 0h60V391h-60v399ZM261 306v570-570Z"
               />
@@ -58,5 +116,8 @@
         </div>
       </div>
     </div>
+  </div>
+  <div class="navigaatio">
+    <app-navbar></app-navbar>
   </div>
 </div>
