@@ -27,6 +27,7 @@ export class InMemoryDataService implements InMemoryDbService {
         sukunimi: 'Sirpaleena',
         kirjautumiset: [
           {
+            pvm: '12/5/2023',
             sisaan: '12/5/2023, 08:01',
             ulos: '12/5/2023, 16:03',
             taukoAlku: '12/5/2023, 11:02',
@@ -41,10 +42,18 @@ export class InMemoryDataService implements InMemoryDbService {
         sukunimi: 'Markkanen',
         kirjautumiset: [
           {
+            pvm: '12/5/2023',
             sisaan: '12/5/2023, 07:03',
             ulos: '12/5/2023, 14:35',
             taukoAlku: '12/5/2023, 09:58',
             taukoLoppu: '12/5/2023, 10:34',
+          },
+          {
+            pvm: '13/5/2023',
+            sisaan: '13/5/2023, 07:01',
+            ulos: '13/5/2023, 14:38',
+            taukoAlku: '13/5/2023, 10:03',
+            taukoLoppu: '13/5/2023, 10:33',
           },
         ],
       },

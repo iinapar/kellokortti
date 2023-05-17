@@ -20,6 +20,7 @@
       {{ worker.sukunimi }}
     </div>
     <div *ngFor="let work of worker.kirjautumiset">
+      <div class="pvm">{{ work.pvm }}</div>
       <div class="flexbox">
         <div>Työn aloitus:</div>
         <div>{{ work.sisaan }}</div>
@@ -36,6 +37,7 @@
         <div>Tauon lopetus:</div>
         <div>{{ work.taukoLoppu }}</div>
       </div>
+      <br />
     </div>
   </div>
 </div>
