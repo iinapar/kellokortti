@@ -38,7 +38,7 @@ p {
   margin: auto;
   padding: 1rem 2rem;
   width: 95%;
-  margin-bottom: 3em;
+  margin-bottom: 1.5em;
   //laatikko yht 387x288
 }
 
@@ -56,7 +56,7 @@ p {
   margin: auto;
   padding: 0.6rem 0.6rem;
   width: 89%;
-  margin-bottom: 2em;
+  margin-bottom: 1.8em;
   //laatikko yht 387x288
 }
 
@@ -220,6 +220,21 @@ p {
   border: 0cm;
 }
 
+.button-big-orange4 {
+  scale: 140%;
+  background-color: #ffffff;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  filter: drop-shadow(1px 4px 2px #00000065);
+  font-weight: bold;
+  color: #ff9f1c;
+  padding: 0.65em 2em;
+  margin-top: 1.65em;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #ff9f1c;
+}
+
 .button-big-orange:hover {
   transition-duration: 0.2s;
   scale: 143%;
@@ -233,6 +248,12 @@ p {
 }
 
 .button-big-orange3:hover {
+  transition-duration: 0.2s;
+  scale: 143%;
+  filter: brightness(1.1);
+}
+
+.button-big-orange4:hover {
   transition-duration: 0.2s;
   scale: 143%;
   filter: brightness(1.1);
@@ -386,6 +407,18 @@ p {
   border: 0cm;
 }
 
+#button-big-orange-modal:hover {
+  transition-duration: 0.2s;
+  scale: 92%;
+  filter: brightness(1.1);
+}
+
+#button-big-orange-modal:active {
+  transition-duration: 0.1s;
+  scale: 88%;
+  filter: brightness(0.9);
+}
+
 #button-big-white-modal {
   scale: 90%;
   background-color: #ffffff;
@@ -397,4 +430,31 @@ p {
   padding: 0.65em 1.5em;
   margin-top: 1.5em;
   border: 0cm;
+}
+
+#button-big-white-modal:hover {
+  transition-duration: 0.2s;
+  scale: 92%;
+  filter: brightness(1.1);
+}
+
+#button-big-white-modal:active {
+  transition-duration: 0.1s;
+  scale: 88%;
+  filter: brightness(0.9);
+}
+
+.navigaatio {
+  margin: auto;
+  width: 90%;
+  position: absolute;
+  bottom: 0.5em;
+  left: 5%;
+}
+
+.leimaviesti {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
