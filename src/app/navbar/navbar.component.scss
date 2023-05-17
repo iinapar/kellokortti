@@ -5,11 +5,10 @@
   border-radius: 30px;
   padding: 1rem;
   margin: 0.5rem;
-  box-shadow: 5px 5px 5px rgb(143, 143, 143);
+  filter: drop-shadow(3px 3px 4px #00000079);
 }
 
 svg {
-
   color: #ff9f1c;
 }
 
@@ -91,13 +90,11 @@ a :hover {
 .big-button {
   background-color: white;
   border-radius: 30px;
-  color: #2EC4B6;
+  color: #2ec4b6;
   width: 9rem;
   font-weight: bold;
-
 }
 
 .row {
   margin-bottom: 1rem;
-  
 }
