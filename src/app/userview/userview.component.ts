@@ -72,7 +72,7 @@ export class UserviewComponent {
   vaihdaModaali() {
     this.modaaliVaihto = true;
     if () {
-      .getElementById("myModal");
+      .getElementById("modal-exit");
     };
   }
 }
