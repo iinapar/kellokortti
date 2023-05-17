@@ -322,3 +322,79 @@ p {
   font-family: 'Montserrat', sans-serif;
   color: #000000;
 }
+
+#myModal {
+  margin-top: 20em;
+}
+
+.modal-content {
+  background-color: #cbf3f0;
+  text-align: center;
+  width: 95%;
+  margin: auto;
+  border-radius: 30px;
+}
+
+.modal-header {
+  text-align: center;
+}
+
+.modal-title {
+  text-align: center;
+  font-weight: 600;
+}
+
+.modal-body {
+  font-weight: 500;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-danger {
+  font-weight: 900;
+  filter: drop-shadow(1px 1px 2px #00000036);
+  background-color: #ff9f1c;
+  margin: 0%;
+}
+
+.btn-danger:hover {
+  transition-duration: 0.2s;
+  scale: 105%;
+  filter: brightness(1.1);
+}
+
+.btn-danger:active {
+  transition-duration: 0.1s;
+  scale: 99%;
+  filter: brightness(0.9);
+}
+
+#button-big-orange-modal {
+  scale: 90%;
+  background-color: #ff9f1c;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  filter: drop-shadow(1px 4px 2px #00000065);
+  font-weight: bold;
+  color: #ffffff;
+  padding: 0.65em 1.5em;
+  margin-top: 1.5em;
+  border: 0cm;
+}
+
+#button-big-white-modal {
+  scale: 90%;
+  background-color: #ffffff;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  filter: drop-shadow(1px 4px 2px #00000065);
+  font-weight: bold;
+  color: #ff9f1c;
+  padding: 0.65em 1.5em;
+  margin-top: 1.5em;
+  border: 0cm;
+}

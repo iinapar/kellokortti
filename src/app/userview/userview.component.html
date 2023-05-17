@@ -10,8 +10,8 @@
     <button
       *ngIf="!tyoKaynnissa && !tauko"
       class="button-big-orange"
-      (click)="doActionBasicTimer('start')"
-      (click)="sisaan()"
+      data-bs-toggle="modal"
+      data-bs-target="#myModal"
     >
       Käynnistä
     </button>
@@ -63,4 +63,48 @@
   <button id="button-lupa">Luvallinen p.olo</button>
   <button id="button-ylityo">Ylityö</button>
   <button id="button-liukuma">Liukuma</button>
+</div>
+
+<!-- Modal käynnistäessä -->
+<div class="modal fade" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Oletko varma?</h4>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+        ></button>
+      </div>
+
+      <!-- Modal body -->
+
+      <div class="modal-body">
+        Olet käynnistämässä työajanseurannan. Haluatko jatkaa?
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button
+          type="button"
+          id="button-big-white-modal"
+          data-bs-dismiss="modal"
+        >
+          Peruuta
+        </button>
+
+        <button
+          *ngIf="!tyoKaynnissa && !tauko"
+          id="button-big-orange-modal"
+          (click)="doActionBasicTimer('start')"
+          (click)="sisaan()"
+          data-bs-dismiss="modal"
+        >
+          Käynnistä
+        </button>
+      </div>
+    </div>
+  </div>
 </div>
