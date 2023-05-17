@@ -277,6 +277,12 @@ p {
   filter: brightness(0.9);
 }
 
+.button-big-orange4:active {
+  transition-duration: 0.1s;
+  scale: 136%;
+  filter: brightness(0.9);
+}
+
 #button-saikku:hover {
   transition-duration: 0.2s;
   scale: 103%;
