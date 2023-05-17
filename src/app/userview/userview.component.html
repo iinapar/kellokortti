@@ -32,7 +32,9 @@
     <button
       *ngIf="tyoKaynnissa"
       class="button-big-orange3"
-      (click)="lopetaPaiva()"
+      data-bs-toggle="modal"
+      data-bs-target="#modal-exit"
+      (click)="vaihdaModaali()"
     >
       Ulos
     </button>
@@ -104,6 +106,49 @@
         >
           Käynnistä
         </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal sulkiessa laskuri -->
+  <div class="modalExit" id="modal-exit">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Oletko varma?</h4>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+          ></button>
+        </div>
+
+        <!-- Modal body -->
+
+        <div class="modal-body">
+          Haluatko varmasti lopettaa laskurin? Tämä lopettaa työpäivän.
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button
+            type="button"
+            id="button-big-white-modal"
+            data-bs-dismiss="modal"
+          >
+            Peruuta
+          </button>
+
+          <button
+            id="button-big-orange-modal"
+            (click)="lopetaPaiva()"
+            data-bs-target="modal-exit"
+            data-bs-dismiss="modal"
+          >
+            Lopeta
+          </button>
+        </div>
       </div>
     </div>
   </div>

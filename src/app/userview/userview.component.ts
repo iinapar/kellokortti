@@ -16,6 +16,7 @@ export class UserviewComponent {
   aloitusaika!: any;
   lopetusaika!: any;
   saldo!: any;
+  modaaliVaihto: boolean = false;
 
   @ViewChild(CdTimerComponent, { static: false }) basicTimer!: CdTimerComponent;
 
@@ -67,5 +68,11 @@ export class UserviewComponent {
   }
   otaSaldo() {
     this.saldo = this.lopetusaika.getTime() - this.aloitusaika.getTime();
+  }
+  vaihdaModaali() {
+    this.modaaliVaihto = true;
+    if () {
+      .getElementById("myModal");
+    };
   }
 }
