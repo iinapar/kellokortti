@@ -9,8 +9,13 @@ import { CdTimerComponent, TimeInterface } from 'angular-cd-timer';
 export class UserviewComponent {
   showTimer: boolean = false;
   tyo: boolean = false;
-  tauko: boolean = true;
+  tauko: boolean = false;
   tyovalmis: boolean = false;
+  tyoKaynnissa: boolean = false;
+  viesti!: string;
+  aloitusaika!: any;
+  lopetusaika!: any;
+  saldo!: any;
 
   @ViewChild(CdTimerComponent, { static: false }) basicTimer!: CdTimerComponent;
 
@@ -18,6 +23,11 @@ export class UserviewComponent {
     this.showTimer = !this.showTimer;
   }
 
+  otaAika() {
+    const event = new Date();
+    const aika = event.toLocaleString('fi-FI');
+    return aika;
+  }
   doActionBasicTimer(action: String) {
     switch (action) {
       case 'start':
@@ -35,10 +45,27 @@ export class UserviewComponent {
     }
   }
   sisaan() {
-    this.tyo = true;
+    this.tyoKaynnissa = true;
+    this.aloitusaika = this.otaAika();
+    this.viesti = 'sisään ' + this.otaAika();
   }
   aloitatauko() {
     this.tauko = true;
-    this.tyo = false;
+    this.viesti = 'Tauko ' + this.otaAika();
+    this.tyoKaynnissa = false;
+  }
+  tauoltasisaan() {
+    this.tauko = false;
+    this.viesti = 'sisään ' + this.otaAika();
+  }
+  lopetaPaiva() {
+    this.tauko = false;
+    this.tyoKaynnissa = false;
+    this.lopetusaika = this.otaAika();
+    this.viesti = 'Ulos ' + this.otaAika();
+    this.otaSaldo();
+  }
+  otaSaldo() {
+    this.saldo = this.lopetusaika.getTime() - this.aloitusaika.getTime();
   }
 }
