@@ -1,12 +1,43 @@
-<div *ngIf="worker">
-  {{ worker.etunimi }}
-  {{ worker.sukunimi }}
-  <div *ngFor="let work of worker.kirjautumiset">
-    {{ work.sisaan }}
-    {{ work.ulos }}
-    {{ work.taukoAlku }}
-    {{ work.taukoLoppu }}
-  </div>
+<button class="button_back" routerLink="/admin">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    height="48"
+    viewBox="0 96 960 960"
+    width="48"
+    id="arrowback"
+  >
+    <path
+      d="M480 896 160 576l320-320 42 42-248 248h526v60H274l248 248-42 42Z"
+    />
+  </svg>
+  Takaisin
+</button>
 
-  <button routerLink="/admin">Takaisin</button>
+<div class="container">
+  <div *ngIf="worker">
+    <div class="name">
+      {{ worker.etunimi }}
+      {{ worker.sukunimi }}
+    </div>
+    <div *ngFor="let work of worker.kirjautumiset">
+      <div class="pvm">{{ work.pvm }}</div>
+      <div class="flexbox">
+        <div>Työn aloitus:</div>
+        <div>{{ work.sisaan }}</div>
+      </div>
+      <div class="flexbox">
+        <div>Työn lopetus:</div>
+        <div>{{ work.ulos }}</div>
+      </div>
+      <div class="flexbox">
+        <div>Tauon aloitus:</div>
+        <div>{{ work.taukoAlku }}</div>
+      </div>
+      <div class="flexbox">
+        <div>Tauon lopetus:</div>
+        <div>{{ work.taukoLoppu }}</div>
+      </div>
+      <br />
+    </div>
+  </div>
 </div>

@@ -27,7 +27,9 @@ export class AdminComponent {
   }
 
   getWorkers(): void {
-    this.workerService.getWorkers().subscribe((workers) => (this.workers = workers));
+    this.workerService
+      .getWorkers()
+      .subscribe((workers) => (this.workers = workers));
   }
 
   showKirjautumiset() {
@@ -50,6 +52,7 @@ export class AdminComponent {
           sukunimi: f.lastname,
           kirjautumiset: [
             {
+              pvm: '',
               sisaan: '',
               ulos: '',
               taukoAlku: '',
