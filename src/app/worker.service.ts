@@ -18,8 +18,8 @@ export class WorkerService {
     return this.http.get<worker[]>(this.workerUrl);
   }
 
-  deleteHero(tunnus: string): Observable<worker> {
-    const url = `${this.workerUrl}/${tunnus}`;
+  deleteHero(id: number): Observable<worker> {
+    const url = `${this.workerUrl}/${id}`;
 
     return this.http.delete<worker>(url, this.httpOptions);
   }

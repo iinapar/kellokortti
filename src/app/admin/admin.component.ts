@@ -79,7 +79,7 @@ export class AdminComponent {
 
   delete(worker: worker): void {
     this.workers = this.workers.filter((h) => h !== worker);
-    this.workerService.deleteHero(worker.tunnus).subscribe();
+    this.workerService.deleteHero(worker.id).subscribe();
   }
 
   update(w: worker) {
