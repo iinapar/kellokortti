@@ -36,7 +36,9 @@
     >
       Ulos
     </button>
-    <button *ngIf="tyovalmis" class="button-big">Tuloste</button>
+    <button routerLink="../output" *ngIf="tyovalmis" class="button-big">
+      Tuloste
+    </button>
     <span *ngIf="!showTimer">
       <button class="button-small-blue" (click)="toggleTimer()">
         Näytä päivän saldo
@@ -55,8 +57,8 @@
 
 <div class="container-leimaus">
   <p>Edellinen leimaus : {{ viesti }}</p>
-  <p>{{ saldo }}</p>
 </div>
+<div class="container-liukuma"></div>
 
 <div class="container-muut">
   <button id="button-saikku">Sairausp.olo</button>

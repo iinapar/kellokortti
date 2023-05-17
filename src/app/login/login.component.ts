@@ -31,7 +31,7 @@ export class LoginComponent {
       formData.salasana === this.users[0].salasana
     ) {
       this.authservice.isLogged = true;
-
+      this.authservice.saldo = this.users[0].saldo;
       this.router.navigate(['userview']);
     } else {
       this.error = true;
