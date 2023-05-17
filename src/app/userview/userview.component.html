@@ -32,13 +32,16 @@
     <button
       *ngIf="tyoKaynnissa"
       class="button-big-orange3"
-      (click)="lopetaPaiva()"
       data-bs-toggle="modal"
       data-bs-target="#endModal"
     >
       Ulos
     </button>
-    <button routerLink="../output" *ngIf="tyovalmis" class="button-big-orange4">
+    <button
+      routerLink="../output"
+      *ngIf="tyovalmis && !tyoKaynnissa"
+      class="button-big-orange4"
+    >
       Tuloste
     </button>
     <span *ngIf="!showTimer">
@@ -146,10 +149,9 @@
         </button>
 
         <button
-          *ngIf="!tyoKaynnissa && !tauko"
           id="button-big-orange-modal"
           (click)="doActionBasicTimer('stop')"
-          (click)="sisaan()"
+          (click)="lopetaPaiva()"
           data-bs-dismiss="modal"
         >
           Lopeta
