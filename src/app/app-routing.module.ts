@@ -4,6 +4,7 @@ import { LoginComponent } from './login/login.component';
 import { UserviewComponent } from './userview/userview.component';
 import { WorkerComponent } from './worker/worker.component';
 import { AdminComponent } from './admin/admin.component';
+import { OutputComponent } from './output/output.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -11,6 +12,7 @@ const routes: Routes = [
   { path: 'admin', component: AdminComponent },
   { path: 'userview', component: UserviewComponent },
   { path: 'detail/:id', component: WorkerComponent },
+  { path: 'output', component: OutputComponent },
 ];
 
 @NgModule({
