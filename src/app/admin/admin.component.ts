@@ -9,14 +9,13 @@ import { WorkerService } from '../worker.service';
 })
 export class AdminComponent {
   workers: worker[] = [];
-  addWorker = false;
   tunnus = '';
   name = '';
   lastname = '';
   kirjautumiset = false;
   id = 3;
   editId = 0;
-  addnew = true;
+  addnew = false;
   saveedited = false;
   editKirjautumiset = {};
 
@@ -27,18 +26,11 @@ export class AdminComponent {
   }
 
   getWorkers(): void {
-    this.workerService
-      .getWorkers()
-      .subscribe((workers) => (this.workers = workers));
+    this.workerService.getWorkers().subscribe((workers) => (this.workers = workers));
   }
 
   showKirjautumiset() {
     this.kirjautumiset = !this.kirjautumiset;
-  }
-
-  addW() {
-    this.addWorker = !this.addWorker;
-    this.addnew = true;
   }
 
   onSubmit(f: any) {
@@ -64,7 +56,7 @@ export class AdminComponent {
           this.workers.push(worker);
         });
 
-      this.addWorker = !this.addWorker;
+      this.addnew = false;
     }
 
     if (this.saveedited === true) {
@@ -81,23 +73,30 @@ export class AdminComponent {
       this.saveedited = false;
       this.name = '';
       this.lastname = '';
-      this.addWorker = false;
+      this.saveedited = false;
     }
   }
 
   delete(worker: worker): void {
     this.workers = this.workers.filter((h) => h !== worker);
-    this.workerService.deleteHero(worker.tunnus).subscribe();
+    this.workerService.deleteHero(worker.id).subscribe();
   }
 
   update(w: worker) {
     this.tunnus = w.tunnus;
     this.name = w.etunimi;
     this.lastname = w.sukunimi;
-    this.addnew = !this.addnew;
     this.saveedited = !this.saveedited;
-    this.addWorker = !this.addWorker;
+    this.addnew = false;
     this.editId = w.id;
     this.editKirjautumiset = w.kirjautumiset;
+  }
+
+  addW() {
+    this.addnew = !this.addnew;
+    this.saveedited = false;
+    this.tunnus = '';
+    this.name = '';
+    this.lastname = '';
   }
 }
