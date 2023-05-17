@@ -23,7 +23,7 @@ export class UserviewComponent {
   aloitusaika2!: any;
   lopetusaika2!: any;
   tuntisaldo!: any;
-
+  tyopaivaMillisekunteina: number = 7 * 3600000;
   erotus!: number;
   erotusTunteina!: number;
 
@@ -86,7 +86,9 @@ export class UserviewComponent {
     if (this.erotus > 7 * 3600000) {
       this.authservice.saldo = this.authservice.saldo + this.erotusTunteina;
     } else {
-      this.authservice.saldo = this.authservice.saldo - this.erotusTunteina;
+      this.authservice.saldo =
+        this.authservice.saldo -
+        (this.tyopaivaMillisekunteina - this.erotusTunteina) / 1000 / 60 / 60;
     }
     this.saldo = this.authservice.saldo;
   }
