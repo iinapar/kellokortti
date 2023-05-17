@@ -20,18 +20,18 @@
       class="button-big-orange"
       (click)="tauoltasisaan()"
     >
-      Käynnistä
+      Jatka
     </button>
     <button
       *ngIf="tyoKaynnissa"
-      class="button-big-orange"
+      class="button-big-orange2"
       (click)="aloitatauko()"
     >
       Tauko
     </button>
     <button
       *ngIf="tyoKaynnissa"
-      class="button-big-orange"
+      class="button-big-orange3"
       (click)="lopetaPaiva()"
     >
       Ulos
@@ -53,12 +53,14 @@
   </div>
 </div>
 
+<div class="container-leimaus">
+  <p>Edellinen leimaus : {{ viesti }}</p>
+  <p>{{ saldo }}</p>
+</div>
+
 <div class="container-muut">
   <button id="button-saikku">Sairausp.olo</button>
   <button id="button-lupa">Luvallinen p.olo</button>
   <button id="button-ylityo">Ylityö</button>
   <button id="button-liukuma">Liukuma</button>
 </div>
-
-<p>Edellinen leimaus : {{ viesti }}</p>
-<p>{{ saldo }}</p>
