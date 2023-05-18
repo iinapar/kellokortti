@@ -10,7 +10,10 @@ import { worker } from '../worker';
 })
 export class WorkerComponent {
   @Input() worker?: worker;
-  constructor(private route: ActivatedRoute, private workerService: WorkerService) {}
+  constructor(
+    private route: ActivatedRoute,
+    private workerService: WorkerService
+  ) {}
 
   ngOnInit(): void {
     this.getWorker();
@@ -18,6 +21,8 @@ export class WorkerComponent {
 
   getWorker(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.workerService.getWorker(id).subscribe((worker) => (this.worker = worker));
+    this.workerService
+      .getWorker(id)
+      .subscribe((worker) => (this.worker = worker));
   }
 }

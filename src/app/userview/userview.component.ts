@@ -32,7 +32,7 @@ export class UserviewComponent {
   toggleTimer() {
     this.showTimer = !this.showTimer;
   }
-
+  // Ottaa sen hetkisen ajan ja palauttaa sen Suomen käyttämässä formaatissa
   otaAika() {
     const event = new Date();
     const aika = event.toLocaleString('fi-FI');
@@ -54,6 +54,8 @@ export class UserviewComponent {
         break;
     }
   }
+  // Funktion kun kirjaudutaan sisään. Ottaa työn aloitusajat, vaihtaa tyoKaynnissa muuttujan arvon
+  // sekä vaihtaa templaattiin viestin arvon sekä ajan.
   sisaan() {
     this.tyoKaynnissa = true;
     this.aloitusaika = this.otaAika();
@@ -76,19 +78,20 @@ export class UserviewComponent {
     this.tyovalmis = true;
     this.lopetusaika = this.otaAika();
     this.lopetusaika2 = Date.now();
-    this.viesti =
-      'Ulos ' + this.otaAika() + '  Liukuma ' + this.authservice.saldo;
+    this.viesti = 'Ulos ' + this.otaAika();
     this.otaSaldo();
   }
   otaSaldo() {
     this.erotus = this.lopetusaika2 - this.aloitusaika2;
     this.erotusTunteina = this.erotus / 1000 / 60 / 60;
     if (this.erotus > 7 * 3600000) {
-      this.authservice.saldo = this.authservice.saldo + this.erotusTunteina;
+      const sum = this.authservice.saldo + this.erotusTunteina;
+      this.authservice.saldo = Math.round(sum * 10) / 10;
     } else {
-      this.authservice.saldo =
+      const sum =
         this.authservice.saldo -
         (this.tyopaivaMillisekunteina - this.erotusTunteina) / 1000 / 60 / 60;
+      this.authservice.saldo = Math.round(sum * 10) / 10;
     }
     this.saldo = this.authservice.saldo;
   }
