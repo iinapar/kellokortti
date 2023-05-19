@@ -4,4 +4,5 @@ export interface user {
   ktunnus: string;
   salasana: string;
   saldo: number;
+  admin: boolean;
 }

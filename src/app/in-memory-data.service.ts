@@ -13,10 +13,12 @@ export class InMemoryDataService implements InMemoryDbService {
     const users: user[] = [
       {
         id: 1,
-        ktunnus: 'FFcc45',
+        ktunnus: 'demouser1',
         salasana: 'Tiko',
         saldo: 30,
+        admin: false,
       },
+      { id: 2, ktunnus: 'demouser2', salasana: 'Tiko', saldo: 30, admin: true },
     ];
 
     const workers: worker[] = [

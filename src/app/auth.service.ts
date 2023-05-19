@@ -10,6 +10,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class AuthService {
   isLogged: boolean;
   saldo!: number;
+  user!: any;
   constructor(private http: HttpClient) {
     this.isLogged = false;
   }

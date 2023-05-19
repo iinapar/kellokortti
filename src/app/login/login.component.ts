@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class LoginComponent {
   constructor(private authservice: AuthService, private router: Router) {}
   users: user[] = [];
-
+  user!: any;
   error: boolean = false;
   ngOnInit() {
     this.getUsers();
@@ -25,16 +25,29 @@ export class LoginComponent {
   // Kun kirjautuminen onnistuu, otetaan käyttäjälle tiedot tietokannasta.
   onSubmit(formData: any, isFormValid: boolean) {
     console.log(formData);
-    if (
-      isFormValid &&
-      formData.tunnus === this.users[0].ktunnus &&
-      formData.salasana === this.users[0].salasana
-    ) {
-      this.authservice.isLogged = true;
-      this.authservice.saldo = this.users[0].saldo;
-      this.router.navigate(['userview']);
-    } else {
-      this.error = true;
+    for (const a of this.users) {
+      if (
+        isFormValid &&
+        formData.tunnus === a.ktunnus &&
+        formData.salasana === a.salasana &&
+        a.admin === false
+      ) {
+        this.authservice.isLogged = true;
+        this.authservice.saldo = a.saldo;
+        this.authservice.user = a.ktunnus;
+        this.router.navigate(['userview']);
+      } else if (
+        isFormValid &&
+        formData.tunnus === a.ktunnus &&
+        formData.salasana === a.salasana &&
+        a.admin === true
+      ) {
+        this.authservice.isLogged = true;
+        this.authservice.user = a.ktunnus;
+        this.router.navigate(['admin']);
+      } else {
+        this.error = true;
+      }
     }
   }
   // Kun suljetaan virheilmoitus, myös error-tila vaihtuu.
