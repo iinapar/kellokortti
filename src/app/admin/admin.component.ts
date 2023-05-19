@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { worker } from '../worker';
 import { WorkerService } from '../worker.service';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-admin',
@@ -8,6 +9,7 @@ import { WorkerService } from '../worker.service';
   styleUrls: ['./admin.component.scss'],
 })
 export class AdminComponent {
+  user: string;
   workers: worker[] = [];
   tunnus = '';
   name = '';
@@ -19,14 +21,21 @@ export class AdminComponent {
   saveedited = false;
   editKirjautumiset = {};
 
-  constructor(private workerService: WorkerService) {}
+  constructor(
+    private workerService: WorkerService,
+    private authservice: AuthService
+  ) {
+    this.user = this.authservice.user;
+  }
 
   ngOnInit(): void {
     this.getWorkers();
   }
 
   getWorkers(): void {
-    this.workerService.getWorkers().subscribe((workers) => (this.workers = workers));
+    this.workerService
+      .getWorkers()
+      .subscribe((workers) => (this.workers = workers));
   }
 
   showKirjautumiset() {

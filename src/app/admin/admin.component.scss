@@ -10,7 +10,7 @@ h4 {
 
 .hakupalkki {
   width: 90%;
-  padding-top: 2em;
+  padding-top: 1em;
   margin: auto;
   display: flex;
   justify-content: center;
@@ -306,4 +306,16 @@ div {
 
 :-moz-placeholder {
   text-align: center;
+}
+
+.loginmoro {
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.7em;
+  font-weight: 800;
+  color: #ffffff;
+  max-width: 90%;
+  padding-top: 0.9em;
+  margin: auto;
+  filter: drop-shadow(1px 1px 1px #00000085);
 }

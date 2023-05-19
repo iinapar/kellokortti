@@ -10,7 +10,9 @@ import { AuthService } from '../auth.service';
 export class UserviewComponent {
   constructor(private authservice: AuthService) {
     this.saldo = this.authservice.saldo;
+    this.user = this.authservice.user;
   }
+  user: string;
   showTimer: boolean = false;
   tyo: boolean = false;
   tauko: boolean = false;
